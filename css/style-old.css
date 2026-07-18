@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&family=Pretendard:wght@400;500;600;700&display=swap");
+
+
+/* =========================
+   전체 기본 스타일
+========================= */
+body {
+    font-family: "Poor Story", cursive;
+    line-height: 1.6;
+    color: #4a4453;
+    background-color: #fffdf7;
+}
+
+.container {
+    width: 95%;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 15px;
+    border: 2px solid #d8c6ef;
+    background-color: #ffffff;
+    border-radius: 16px;
+}
+
+/* =========================
+   제목 스타일
+========================= */
+h1 {
+    color: #4a4453;
+    font-size: 36px;
+    background-color: #fff3a6;
+    padding: 18px 22px;
+    border: 2px solid #3d3745;
+    border-radius: 18px;
+}
+
+
+h2 {
+    color: #4b3461;
+    font-size: 28px;
+    background-color: #ffffc4;
+    padding: 10px 14px;
+    border-left: 5px solid #8b65bc;
+    border-radius: 10px;
+    margin-top: 34px;
+}
+
+h3 {
+    display: inline-block;
+    color: #5f4b75;
+    padding-bottom: 6px;
+    border-bottom: 2px solid #d8c6ef;
+}
+
+/* =========================
+   링크 스타일
+========================= */
+a {
+    color: #403064;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* =========================
+   7. 바로가기 Flexbox
+========================= */
+.shortcut-list {
+    display: flex;
+    gap: 12px;
+    padding: 0;
+    list-style: none;
+    flex-wrap: wrap;
+}
+
+.shortcut-list a {
+    display: block;
+    padding: 10px 16px;
+    border: 1px solid #d8c6ef;
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+/* =========================
+   8. main과 aside Flexbox
+========================= */
+.content-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+main {
+    flex: 3;
+}
+
+aside {
+    flex: 1;
+    padding: 18px;
+    border: 1px solid #d8c6ef;
+    border-radius: 12px;
+    background-color: #fffdf2;
+}
+
+
+/* =========================
+   여행 카드
+========================= */
+
+.trip-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.trip-card {
+    background-color: #ffffff;
+    border: 2px solid #e3b2ed;
+    padding: 16px;
+    margin: 0;
+    border-radius: 8px;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+
+.trip-card img {
+    display: block;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.trip-card span {
+    display: block;
+}
+
+/* =========================
+   시간표 테이블
+========================= */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background-color: #ffffff;
+}
+
+th,
+td {
+    border: 1px solid #d8c6ef;
+    padding: 12px 16px;
+    text-align: center;
+}
+
+th {
+    background-color: #fff1a8;
+    color: #5f5668;
+}
+
+tbody tr:nth-child(even)>td:first-child {
+    background-color: #f6f0ff;
+}
+
+.lunch-row td {
+    background-color: #fff3b0;
+    font-weight: bold;
+}
+
+
+/* =========================
+   회원가입
+========================= */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0 16px;
+    border: 1px solid #d8c6ef;
+    border-radius: 8px;
+    font-family: "Poor Story", cursive;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    width: auto;
+    margin: 0 6px 0 0;
+}
+
+.required {
+    color: #d94f4f;
+    font-weight: bold;
+}
+
+.required {
+    color: #d94f4f;
+    font-weight: bold;
+}
+
+
+/* =========================
+   10. 반응형 웹 디자인
+========================= */
+@media screen and (max-width: 786px) {
+
+    /* index.html의 main과 aside를 세로 1열로 배치 */
+    .content-layout {
+        flex-direction: column;
+    }
+
+    main,
+    aside {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    /* index.html의 바로가기를 세로 1열로 배치 */
+    .shortcut-list {
+        flex-direction: column;
+    }
+
+    .shortcut-list li {
+        width: 100%;
+    }
+
+    .shortcut-list a {
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    /* myTrip.html의 여행 카드들을 1열로 배치 */
+    .trip-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* =========================
+   11. 마우스 반응과 애니메이션
+========================= */
+
+/* 바로가기 메뉴 */
+.shortcut-list a {
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.shortcut-list a:hover {
+    background-color: #8b65bc;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* 회원가입 버튼 */
+input[type="submit"],
+input[type="reset"] {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 10px;
+    font-family: "Poor Story", cursive;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+input[type="submit"] {
+    background-color: #8b65bc;
+    color: #ffffff;
+}
+
+input[type="reset"] {
+    background-color: #eee8f5;
+    color: #4a4453;
+}
+
+input[type="submit"]:hover {
+    background-color: #65458e;
+}
+
+input[type="reset"]:hover {
+    background-color: #d8c6ef;
+}
+
+/* 여행 카드 */
+.trip-card {
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.trip-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* 메인 제목 등장 애니메이션 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main-title {
+    animation: fadeIn 1s ease-out;
+}
+
+
+/* =========================
+   게임버튼
+========================= */
+
+.game-section button {
+    padding: 10px 18px;
+    border: none;
+    border-radius: 10px;
+    background-color: #8b65bc;
+    color: white;
+    font-family: "Poor Story", cursive;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.game-section button:hover {
+    background-color: #65458e;
+}
+
+/* =========================
+   날씨박스
+========================= */
+
+.weather-section select {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 12px;
+    border: 1px solid #d8c6ef;
+    border-radius: 8px;
+    font-family: "Poor Story", cursive;
+    font-size: 16px;
+}
+
+#weather-box {
+    padding: 14px;
+    border: 1px solid #d8c6ef;
+    border-radius: 10px;
+    background-color: #faf7ff;
+    line-height: 1.8;
+}

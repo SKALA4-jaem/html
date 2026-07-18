@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poor+Story&display=swap");
-
+@import url("https://fonts.googleapis.com/css2?family=Poor+Story&family=Pretendard:wght@400;500;600;700&display=swap");
 
 
 /* =========================
@@ -355,4 +355,809 @@ input[type="reset"]:hover {
     border-radius: 10px;
     background-color: #faf7ff;
     line-height: 1.8;
+}
+
+/* =========================================================
+   INDEX PAGE 2.0
+   기존 main + aside 구조를 유지한 다이어리 스타일
+========================================================= */
+
+.home-page {
+    --home-purple: #8064b5;
+    --home-purple-dark: #5d477f;
+    --home-lavender: #eee7fb;
+    --home-yellow: #fff1a8;
+    --home-pink: #f9d9e5;
+    --home-blue: #ddecfa;
+    --home-cream: #fffaf1;
+    --home-text: #443d4c;
+    --home-muted: #786f80;
+    --home-line: #e8dfef;
+    --home-shadow: 0 16px 40px rgba(98, 73, 126, 0.12);
+
+    margin: 0;
+    min-height: 100vh;
+    color: var(--home-text);
+    background:
+        radial-gradient(circle at 8% 8%, rgba(249, 217, 229, 0.72), transparent 24%),
+        radial-gradient(circle at 92% 16%, rgba(221, 236, 250, 0.82), transparent 25%),
+        linear-gradient(180deg, #fffdf8 0%, #fbf7ff 100%);
+    font-family: "Pretendard", Arial, sans-serif;
+}
+
+.home-page * {
+    box-sizing: border-box;
+}
+
+.home-page .home-container {
+    width: min(1180px, calc(100% - 40px));
+    max-width: none;
+    margin: 28px auto;
+    padding: 24px;
+    border: 1px solid rgba(128, 100, 181, 0.18);
+    border-radius: 32px;
+    background: rgba(255, 255, 255, 0.86);
+    box-shadow: var(--home-shadow);
+    backdrop-filter: blur(10px);
+}
+
+.home-hero {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    min-height: 250px;
+    padding: 42px 46px;
+    overflow: hidden;
+    border: 1px solid rgba(128, 100, 181, 0.16);
+    border-radius: 30px;
+    background:
+        linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(250, 245, 255, 0.93));
+}
+
+.home-hero::before,
+.home-hero::after {
+    position: absolute;
+    border-radius: 50%;
+    content: "";
+}
+
+.home-hero::before {
+    width: 180px;
+    height: 180px;
+    top: -70px;
+    right: 18%;
+    background: rgba(255, 241, 168, 0.58);
+}
+
+.home-hero::after {
+    width: 135px;
+    height: 135px;
+    left: -40px;
+    bottom: -55px;
+    background: rgba(249, 217, 229, 0.65);
+}
+
+.hero-copy,
+.hero-stickers {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-kicker,
+.section-kicker {
+    margin: 0 0 8px;
+    color: var(--home-purple);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+}
+
+.home-page .main-title {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--home-text);
+    font-family: "Poor Story", cursive;
+    font-size: clamp(42px, 6vw, 68px);
+    line-height: 1.1;
+    animation: homeFadeUp 0.9s ease-out;
+}
+
+.hero-description {
+    max-width: 660px;
+    margin: 20px 0 0;
+    color: var(--home-muted);
+    font-size: 17px;
+    line-height: 1.8;
+}
+
+.hero-stickers {
+    flex: 0 0 210px;
+    height: 150px;
+}
+
+.sticker,
+.sticker-blue {
+    position: absolute;
+    display: grid;
+    place-items: center;
+    box-shadow: 0 12px 28px rgba(98, 73, 126, 0.15);
+}
+
+.sticker {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    font-size: 30px;
+}
+
+.sticker-yellow {
+    top: 2px;
+    right: 12px;
+    background: var(--home-yellow);
+    transform: rotate(10deg);
+    animation: stickerFloat 3.2s ease-in-out infinite;
+}
+
+.sticker-pink {
+    left: 22px;
+    bottom: 10px;
+    background: var(--home-pink);
+    transform: rotate(-12deg);
+    animation: stickerFloat 3.8s ease-in-out infinite reverse;
+}
+
+.sticker-blue {
+    width: 82px;
+    height: 52px;
+    right: 64px;
+    bottom: 18px;
+    border-radius: 999px;
+    background: var(--home-blue);
+    font-size: 27px;
+    animation: stickerFloat 4.2s ease-in-out infinite;
+}
+
+.shortcut-section {
+    margin-top: 26px;
+    padding: 27px;
+    border: 1px solid rgba(128, 100, 181, 0.12);
+    border-radius: 26px;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 10px 30px rgba(98, 73, 126, 0.07);
+}
+
+.section-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 22px;
+    margin-bottom: 20px;
+}
+
+.section-heading>p {
+    margin: 0;
+    color: var(--home-muted);
+    font-size: 14px;
+}
+
+.home-page h2 {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background: none;
+    color: var(--home-text);
+    font-family: "Poor Story", cursive;
+    font-size: 31px;
+}
+
+.home-page .shortcut-list {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 12px;
+    margin: 0;
+    padding: 0;
+}
+
+.home-page .shortcut-list li {
+    min-width: 0;
+}
+
+.home-page .shortcut-list a {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    min-height: 122px;
+    padding: 18px;
+    border: 1px solid var(--home-line);
+    border-radius: 20px;
+    color: var(--home-text);
+    background: linear-gradient(145deg, #ffffff, #fcf9ff);
+    box-shadow: 0 8px 20px rgba(98, 73, 126, 0.06);
+    transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+}
+
+.home-page .shortcut-list a:hover {
+    border-color: rgba(128, 100, 181, 0.45);
+    color: var(--home-text);
+    background: #ffffff;
+    box-shadow: 0 16px 28px rgba(98, 73, 126, 0.13);
+    text-decoration: none;
+    transform: translateY(-6px);
+}
+
+.shortcut-icon {
+    margin-bottom: 12px;
+    font-size: 27px;
+}
+
+.shortcut-list strong {
+    font-size: 16px;
+}
+
+.shortcut-list small {
+    margin-top: 4px;
+    color: var(--home-muted);
+}
+
+.home-page .content-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 2.15fr) minmax(280px, 0.85fr);
+    gap: 24px;
+    margin-top: 26px;
+    align-items: start;
+}
+
+.home-main,
+.home-aside {
+    min-width: 0;
+}
+
+.home-page .home-aside {
+    display: grid;
+    gap: 18px;
+    padding: 0;
+    border: 0;
+    background: none;
+}
+
+.main-card,
+.side-card {
+    border: 1px solid rgba(128, 100, 181, 0.12);
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 12px 32px rgba(98, 73, 126, 0.08);
+}
+
+.main-card {
+    padding: 30px;
+    border-radius: 28px;
+}
+
+.main-card+.main-card {
+    margin-top: 24px;
+}
+
+.heading-badge {
+    padding: 7px 11px;
+    border-radius: 999px;
+    color: var(--home-purple-dark);
+    background: var(--home-yellow);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+}
+
+.photo-badge {
+    background: var(--home-pink);
+}
+
+.update-note {
+    position: relative;
+    padding: 21px 0 21px 24px;
+    border-bottom: 1px dashed rgba(128, 100, 181, 0.24);
+}
+
+.update-note:last-child {
+    border-bottom: 0;
+}
+
+.update-note::before {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    top: 28px;
+    left: 0;
+    border-radius: 50%;
+    background: var(--home-purple);
+    box-shadow: 0 0 0 6px rgba(128, 100, 181, 0.12);
+    content: "";
+}
+
+.note-date {
+    margin: 0 0 7px;
+    color: var(--home-purple);
+    font-family: "Poor Story", cursive;
+    font-weight: 700;
+}
+
+.home-page .update-note h3 {
+    display: block;
+    margin: 0 0 9px;
+    padding: 0;
+    border: 0;
+    color: var(--home-text);
+    font-size: 19px;
+}
+
+.update-note p:last-child {
+    margin: 0;
+    color: var(--home-muted);
+    line-height: 1.8;
+}
+
+.best-shot {
+    position: relative;
+    margin: 10px 0 0;
+    padding: 15px 15px 24px;
+    border: 1px solid var(--home-line);
+    background: #ffffff;
+    box-shadow: 0 17px 38px rgba(98, 73, 126, 0.13);
+    transform: rotate(-1deg);
+    transition: transform 0.35s, box-shadow 0.35s;
+}
+
+.best-shot:hover {
+    box-shadow: 0 24px 44px rgba(98, 73, 126, 0.2);
+    transform: rotate(0deg) translateY(-5px);
+}
+
+.best-shot img {
+    display: block;
+    width: 100%;
+    max-height: 430px;
+    object-fit: cover;
+}
+
+.best-shot figcaption {
+    padding-top: 18px;
+    color: var(--home-purple-dark);
+    text-align: center;
+    font-family: "Poor Story", cursive;
+    font-size: 21px;
+}
+
+.photo-tape {
+    position: absolute;
+    z-index: 2;
+    width: 92px;
+    height: 28px;
+    top: -13px;
+    left: 50%;
+    background: rgba(255, 241, 168, 0.78);
+    transform: translateX(-50%) rotate(-3deg);
+}
+
+.side-card {
+    padding: 23px;
+    border-radius: 24px;
+}
+
+.location-card {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.96), rgba(238, 231, 251, 0.65));
+}
+
+.location-text {
+    margin: 15px 0 0;
+    color: var(--home-muted);
+}
+
+.side-card-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 14px;
+}
+
+.home-page .side-card h3 {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: var(--home-text);
+    font-size: 22px;
+}
+
+.mini-icon {
+    display: grid;
+    place-items: center;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    background: var(--home-blue);
+    font-size: 22px;
+}
+
+.home-page .weather-section {
+    background:
+        linear-gradient(145deg, rgba(255, 255, 255, 0.97), rgba(221, 236, 250, 0.68));
+}
+
+.home-page .weather-section label {
+    display: block;
+    margin: 18px 0 8px;
+    color: var(--home-muted);
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.home-page .weather-section select {
+    width: 100%;
+    margin: 0;
+    padding: 13px 14px;
+    border: 1px solid var(--home-line);
+    border-radius: 14px;
+    color: var(--home-text);
+    background: #ffffff;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+}
+
+.home-page .weather-section select:focus {
+    border-color: var(--home-purple);
+    box-shadow: 0 0 0 4px rgba(128, 100, 181, 0.12);
+}
+
+.home-page #weather-box {
+    min-height: 125px;
+    margin-top: 14px;
+    padding: 17px;
+    border: 1px dashed rgba(128, 100, 181, 0.3);
+    border-radius: 18px;
+    color: var(--home-muted);
+    background: rgba(255, 255, 255, 0.74);
+    line-height: 1.8;
+}
+
+.home-page #weather-box strong {
+    color: var(--home-purple-dark);
+    font-size: 17px;
+}
+
+.weather-message {
+    display: inline-block;
+    margin-top: 8px;
+    color: var(--home-text);
+    font-weight: 700;
+}
+
+.mini-tool {
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.28s, box-shadow 0.28s;
+}
+
+.mini-tool:hover {
+    box-shadow: 0 20px 38px rgba(98, 73, 126, 0.14);
+    transform: translateY(-6px);
+}
+
+.mini-tool .tool-icon {
+    display: inline-grid;
+    place-items: center;
+    width: 52px;
+    height: 52px;
+    margin-bottom: 16px;
+    border-radius: 17px;
+    background: rgba(255, 255, 255, 0.72);
+    font-size: 26px;
+}
+
+.mini-tool p:not(.section-kicker) {
+    min-height: 50px;
+    margin: 13px 0 0;
+    color: var(--home-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.tool-purple {
+    background: linear-gradient(145deg, #f7f3ff, #ece3fb);
+}
+
+.tool-yellow {
+    background: linear-gradient(145deg, #fffdf2, #fff2b4);
+}
+
+.tool-pink {
+    background: linear-gradient(145deg, #fff8fb, #f7dce7);
+}
+
+.mini-tool button {
+    width: 100%;
+    margin-top: 18px;
+    padding: 12px 16px;
+    border: 0;
+    border-radius: 13px;
+    color: #ffffff;
+    background: var(--home-purple);
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+.mini-tool button:hover {
+    background: var(--home-purple-dark);
+    transform: translateY(-2px);
+}
+
+.study-link {
+    display: block;
+    padding: 16px 18px;
+    border: 1px dashed rgba(128, 100, 181, 0.35);
+    border-radius: 18px;
+    color: var(--home-purple-dark);
+    background: rgba(255, 255, 255, 0.68);
+    font-weight: 700;
+    text-align: center;
+    transition: background-color 0.25s, transform 0.25s;
+}
+
+.study-link:hover {
+    background: var(--home-lavender);
+    text-decoration: none;
+    transform: translateY(-3px);
+}
+
+.home-footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px 30px;
+    margin-top: 26px;
+    padding: 28px 30px;
+    border-radius: 25px;
+    color: #ffffff;
+    background: var(--home-purple-dark);
+}
+
+.home-footer strong {
+    font-family: "Poor Story", cursive;
+    font-size: 24px;
+}
+
+.home-footer p {
+    margin: 4px 0 0;
+    color: rgba(255, 255, 255, 0.76);
+}
+
+.home-footer a {
+    color: #ffffff;
+}
+
+.home-footer .copyright {
+    grid-column: 1 / -1;
+    padding-top: 17px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 13px;
+}
+
+@keyframes homeFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(24px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes stickerFloat {
+
+    0%,
+    100% {
+        transform: translateY(0) rotate(8deg);
+    }
+
+    50% {
+        transform: translateY(-10px) rotate(-4deg);
+    }
+}
+
+@media screen and (max-width: 980px) {
+    .home-page .shortcut-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .home-page .content-layout {
+        grid-template-columns: minmax(0, 1.65fr) minmax(250px, 0.85fr);
+    }
+}
+
+@media screen and (max-width: 786px) {
+    .home-page .home-container {
+        width: min(100% - 20px, 1180px);
+        margin: 10px auto;
+        padding: 14px;
+        border-radius: 24px;
+    }
+
+    .home-hero {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 34px 25px;
+        border-radius: 24px;
+    }
+
+    .hero-stickers {
+        align-self: center;
+        width: 210px;
+    }
+
+    .section-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .home-page .shortcut-list {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .home-page .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .home-main,
+    .home-page .home-aside {
+        width: 100%;
+    }
+
+    .home-footer {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .home-page .shortcut-list {
+        grid-template-columns: 1fr;
+    }
+
+    .home-page .shortcut-list a {
+        min-height: 100px;
+    }
+
+    .main-card,
+    .side-card,
+    .shortcut-section {
+        padding: 21px;
+        border-radius: 21px;
+    }
+
+    .home-page .main-title {
+        font-size: 42px;
+    }
+}
+
+
+/* =========================
+   미니 플레이그라운드 카드
+========================= */
+
+.playground-card {
+    background:
+        linear-gradient(145deg,
+            rgba(255, 255, 255, 0.97),
+            rgba(238, 231, 251, 0.75));
+}
+
+.playground-description {
+    margin: 14px 0 18px;
+    color: var(--home-muted);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.playground-list {
+    display: grid;
+    gap: 12px;
+}
+
+.playground-item {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    width: 100%;
+    padding: 14px;
+
+    border: 1px solid rgba(128, 100, 181, 0.14);
+    border-radius: 17px;
+
+    color: var(--home-text);
+    background-color: rgba(255, 255, 255, 0.82);
+
+    font-family: inherit;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.25s,
+        box-shadow 0.25s,
+        border-color 0.25s;
+}
+
+.playground-item:hover {
+    border-color: rgba(128, 100, 181, 0.42);
+
+    box-shadow:
+        0 12px 24px rgba(98, 73, 126, 0.13);
+
+    transform: translateX(5px);
+}
+
+.playground-icon {
+    display: grid;
+    place-items: center;
+
+    flex-shrink: 0;
+
+    width: 46px;
+    height: 46px;
+
+    border-radius: 15px;
+
+    font-size: 23px;
+}
+
+.game-item .playground-icon {
+    background-color: #eee7fb;
+}
+
+.grade-item .playground-icon {
+    background-color: #fff1a8;
+}
+
+.bag-item .playground-icon {
+    background-color: #f9d9e5;
+}
+
+.playground-text {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+
+    min-width: 0;
+}
+
+.playground-text strong {
+    color: var(--home-text);
+    font-size: 15px;
+}
+
+.playground-text small {
+    margin-top: 4px;
+
+    color: var(--home-muted);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.playground-arrow {
+    color: var(--home-purple);
+    font-size: 25px;
+    font-weight: bold;
+
+    transition: transform 0.25s;
+}
+
+.playground-item:hover .playground-arrow {
+    transform: translateX(3px);
 }
