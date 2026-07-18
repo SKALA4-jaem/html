@@ -1,41 +1,347 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 
 <head>
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>나의 휴일 일과</title>
 
-    <!-- css 연결  -->
+    <!-- 공통 CSS 연결 -->
     <link rel="stylesheet" href="../css/style.css">
-
 </head>
 
-<body>
-    <div class="container">
-        <h1>🧘🏻‍♀️나의 휴일 일과🧘🏻‍♀️</h1>
+<body class="holiday-page">
 
-        <h2>🛌<ins>느긋한 아침</ins></h2>
-        <p><strong>9:00</strong> - 💤 아직 나는 꿈나라</p>
-        <p><strong>10:00</strong>- 💤 아직 나는 꿈나라</p>
-        <p><strong>11:00</strong> - 💤 아직 나는 꿈나라</p>
-        <br>
+    <main class="holiday-container">
 
+        <!-- 메인페이지로 돌아가기 -->
+        <a href="index.html" class="back-home">
+            ← 메인페이지로 돌아가기
+        </a>
 
-        <h2>🏃🏻💨<ins>오후 활동</ins></h2>
-        <p><strong>13:00</strong> -🍱 맛난 점심 시켜먹기</p>
-        <p><strong>14:00</strong>- 🧺 소화 시키겸 <mark>집안일</mark></p>
-        <p><strong>15:00</strong> - 📺 밀린 드라마 보기</p>
-        <br>
+        <!-- 페이지 상단 제목 -->
+        <header class="holiday-header">
 
-        <h2>🌝<ins>저녁과 밤</ins></h2>
-        <p><strong>17:00</strong> -🍱 또또 더 맛난 저녁 시켜먹기 </p>
-        <p><strong>18:00</strong>- 📖 <mark>공부해야지</mark></p>
-        <p><strong>21:00</strong> - 📺 또또 밀린 드라마 보기</p>
-        <br>
+            <div class="holiday-header-text">
 
-        <p>🗓️ 휴일 버전 작성일 : 2026년 7월</p>
-    </div>
+                <p class="holiday-kicker">
+                    MY HOLIDAY DIARY
+                </p>
+
+                <h1>
+                    🧘🏻‍♀️ 나의 휴일 일과
+                </h1>
+
+                <p class="holiday-description">
+                    푹 쉬고, 맛있는 것도 먹고,
+                    하고 싶은 일을 천천히 즐기는 재은이의 휴일 기록입니다.
+                </p>
+
+            </div>
+
+            <div class="holiday-header-icon">
+                🛋️
+            </div>
+
+        </header>
+
+        <!-- 휴일 요약 -->
+        <section class="holiday-summary" aria-label="휴일 일과 요약">
+
+            <article class="holiday-summary-item">
+                <span class="holiday-summary-icon">💤</span>
+
+                <div>
+                    <strong>기상 시간</strong>
+                    <p>느긋하게 11시 이후</p>
+                </div>
+            </article>
+
+            <article class="holiday-summary-item">
+                <span class="holiday-summary-icon">🍱</span>
+
+                <div>
+                    <strong>오늘의 행복</strong>
+                    <p>맛있는 음식 시켜 먹기</p>
+                </div>
+            </article>
+
+            <article class="holiday-summary-item">
+                <span class="holiday-summary-icon">📺</span>
+
+                <div>
+                    <strong>휴식 방법</strong>
+                    <p>밀린 드라마 정주행</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- 휴일 일과 -->
+        <section class="holiday-routine-card">
+
+            <div class="holiday-section-heading">
+
+                <div>
+                    <p class="holiday-kicker">
+                        HOLIDAY ROUTINE
+                    </p>
+
+                    <h2>
+                        오늘의 느긋한 일정
+                    </h2>
+                </div>
+
+                <span class="holiday-sticker">
+                    REST DAY ♡
+                </span>
+
+            </div>
+
+            <p class="holiday-guide">
+                바쁜 하루에서 잠시 벗어나 천천히 쉬어가는 날이에요.
+            </p>
+
+            <div class="routine-grid">
+
+                <!-- 아침 -->
+                <article class="routine-card morning-card">
+
+                    <div class="routine-card-heading">
+
+                        <span class="routine-main-icon">
+                            🛌
+                        </span>
+
+                        <div>
+                            <span class="routine-time-label">
+                                MORNING
+                            </span>
+
+                            <h3>
+                                느긋한 아침
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <ul class="routine-list">
+
+                        <li>
+                            <time datetime="09:00">
+                                09:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>💤</span>
+
+                                <p>
+                                    아직 나는 꿈나라
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <time datetime="10:00">
+                                10:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>🌙</span>
+
+                                <p>
+                                    이불 속에서 조금 더 자기
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <time datetime="11:00">
+                                11:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>🌤️</span>
+
+                                <p>
+                                    천천히 일어나 휴일 시작하기
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+                <!-- 오후 -->
+                <article class="routine-card afternoon-card">
+
+                    <div class="routine-card-heading">
+
+                        <span class="routine-main-icon">
+                            🏃🏻‍♀️
+                        </span>
+
+                        <div>
+                            <span class="routine-time-label">
+                                AFTERNOON
+                            </span>
+
+                            <h3>
+                                여유로운 오후
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <ul class="routine-list">
+
+                        <li>
+                            <time datetime="13:00">
+                                13:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>🍱</span>
+
+                                <p>
+                                    맛있는 점심 시켜 먹기
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <time datetime="14:00">
+                                14:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>🧺</span>
+
+                                <p>
+                                    소화도 시킬 겸 집안일 하기
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <time datetime="15:00">
+                                15:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>📺</span>
+
+                                <p>
+                                    밀린 드라마 편하게 보기
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+                <!-- 저녁 -->
+                <article class="routine-card evening-card">
+
+                    <div class="routine-card-heading">
+
+                        <span class="routine-main-icon">
+                            🌝
+                        </span>
+
+                        <div>
+                            <span class="routine-time-label">
+                                EVENING
+                            </span>
+
+                            <h3>
+                                저녁과 밤
+                            </h3>
+                        </div>
+
+                    </div>
+
+                    <ul class="routine-list">
+
+                        <li>
+                            <time datetime="17:00">
+                                17:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>🍽️</span>
+
+                                <p>
+                                    더 맛있는 저녁 시켜 먹기
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <time datetime="18:00">
+                                18:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>📖</span>
+
+                                <p>
+                                    조금이라도 공부하고 뿌듯해하기
+                                </p>
+                            </div>
+                        </li>
+
+                        <li>
+                            <time datetime="21:00">
+                                21:00
+                            </time>
+
+                            <div class="routine-content">
+                                <span>📺</span>
+
+                                <p>
+                                    다시 밀린 드라마 보며 하루 마무리
+                                </p>
+                            </div>
+                        </li>
+
+                    </ul>
+
+                </article>
+
+            </div>
+
+            <!-- 하루 마무리 문구 -->
+            <div class="holiday-message">
+
+                <span class="holiday-message-icon">
+                    💜
+                </span>
+
+                <div>
+                    <strong>
+                        휴일에는 잘 쉬는 것도 중요한 일이에요.
+                    </strong>
+
+                    <p>
+                        충분히 쉬고 다시 시작할 힘을 충전하는 하루!
+                    </p>
+                </div>
+
+            </div>
+
+            <p class="holiday-date">
+                🗓️ 휴일 버전 작성일 · 2026년 7월
+            </p>
+
+        </section>
+
+    </main>
+
 </body>
 
 </html>

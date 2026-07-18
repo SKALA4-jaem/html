@@ -3,92 +3,327 @@
 
 <head>
     <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>나의 강의 시간표</title>
 
     <!-- 공통 CSS 연결 -->
     <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
-    <div class="container">
+<body class="class-page">
 
-        <h1>🗓️ 나의 강의 시간표</h1>
+    <main class="class-container">
 
-        <table border="1">
-            <thead>
-                <tr>
-                    <th>시간</th>
-                    <th>월요일</th>
-                    <th>화요일</th>
-                    <th>수요일</th>
-                    <th>목요일</th>
-                    <th>금요일</th>
-                </tr>
-            </thead>
+        <!-- 메인페이지로 돌아가기 -->
+        <a href="index.html" class="back-home">
+            ← 메인페이지로 돌아가기
+        </a>
 
-            <tbody>
+        <!-- 시간표 페이지 상단 -->
+        <header class="class-header">
 
-                <tr>
-                    <td>09:00 ~ 10:00</td>
-                    <td rowspan="3">Vue.js<br>웹 프레임워크 💻</td>
-                    <td rowspan="2">네트워크<br>보안 기초 🔒</td>
-                    <td rowspan="3">웹 시스템<br>설계 및 분석 🛠️</td>
-                    <td>IT 트렌드 특강 💡</td>
-                    <td rowspan="3">자바스크립트<br>심화 실습 🚀</td>
-                </tr>
+            <div class="class-header-text">
 
-                <tr>
-                    <td>10:00 ~ 11:00</td>
-                    <td rowspan="2">데이터베이스<br>SQL 실습</td>
-                </tr>
+                <p class="class-kicker">
+                    MY CLASS DIARY
+                </p>
 
-                <tr>
-                    <td>11:00 ~ 12:00</td>
-                    <td>알고리즘 문제풀이</td>
+                <h1>
+                    🗓️ 나의 강의 시간표
+                </h1>
 
-                </tr>
+                <p class="class-description">
+                    월요일부터 금요일까지 배우는 수업을
+                    한눈에 정리한 재은이의 학습 기록입니다.
+                </p>
 
-                <tr class="lunch-row">
-                    <td>12:00 ~ 13:00</td>
-                    <td colspan="5" align="center">🍱 점심 시간 🍱</td>
-                </tr>
+            </div>
 
-                <tr>
-                    <td>13:00 ~ 14:00</td>
-                    <td rowspan="4">UI/UX<br>디자인 표준 🎨</td>
-                    <td rowspan="2">리눅스<br>시스템 관리 🐧</td>
-                    <td rowspan="2">클라우드<br>AWS 기초 ☁️</td>
-                    <td rowspan="3">자료구조 📚</td>
-                    <td rowspan="1">개인 프로젝트 🚀</td>
-                </tr>
+            <div class="class-header-icon">
+                📚
+            </div>
 
-                <tr>
-                    <td>14:00 ~ 15:00</td>
-                    <td rowspan="3">오픈소스<br>소프트웨어</td>
-                </tr>
+        </header>
 
-                <tr>
-                    <td>15:00 ~ 16:00</td>
-                    <td rowspan="3">Git & GitHub<br>버전 관리 🌺</td>
-                    <td rowspan="3">인공지능<br>머신러닝 기초 🤖</td>
-                </tr>
+        <!-- 간단한 시간표 정보 -->
+        <section class="class-summary" aria-label="시간표 요약">
 
-                <tr>
-                    <td>16:00 ~ 17:00</td>
-                    <td rowspan="2">빅데이터<br>분석 실무 📈</td>
-                </tr>
+            <article class="summary-item">
+                <span class="summary-icon">⏰</span>
 
-                <tr>
-                    <td>17:00 ~ 18:00</td>
-                    <td>취업 창업 특강</td>
-                    <td>주간 회고 📝</td>
-                </tr>
+                <div>
+                    <strong>수업 시간</strong>
+                    <p>09:00 ~ 18:00</p>
+                </div>
+            </article>
 
-            </tbody>
+            <article class="summary-item">
+                <span class="summary-icon">📅</span>
 
-        </table>
+                <div>
+                    <strong>수업 요일</strong>
+                    <p>월요일 ~ 금요일</p>
+                </div>
+            </article>
 
-    </div>
+            <article class="summary-item">
+                <span class="summary-icon">☕</span>
+
+                <div>
+                    <strong>점심시간</strong>
+                    <p>12:00 ~ 13:00</p>
+                </div>
+            </article>
+
+        </section>
+
+        <!-- 시간표 카드 -->
+        <section class="schedule-card">
+
+            <div class="schedule-heading">
+
+                <div>
+                    <p class="class-kicker">
+                        WEEKLY SCHEDULE
+                    </p>
+
+                    <h2>
+                        이번 주 수업
+                    </h2>
+                </div>
+
+                <span class="schedule-sticker">
+                    STUDY ✨
+                </span>
+
+            </div>
+
+            <p class="schedule-guide">
+                과목 칸에 마우스를 올리면 수업이 강조됩니다.
+            </p>
+
+            <!-- 모바일에서 좌우 스크롤 -->
+            <div class="schedule-table-wrap">
+
+                <table class="schedule-table">
+
+                    <thead>
+                        <tr>
+                            <th scope="col">시간</th>
+                            <th scope="col">월요일</th>
+                            <th scope="col">화요일</th>
+                            <th scope="col">수요일</th>
+                            <th scope="col">목요일</th>
+                            <th scope="col">금요일</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <!-- 09:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                09:00<br>
+                                <span>~ 10:00</span>
+                            </th>
+
+                            <td rowspan="3" class="subject-cell subject-purple">
+                                <span class="subject-icon">💻</span>
+                                <strong>Vue.js</strong>
+                                <small>웹 프레임워크</small>
+                            </td>
+
+                            <td rowspan="2" class="subject-cell subject-blue">
+                                <span class="subject-icon">🔒</span>
+                                <strong>네트워크</strong>
+                                <small>보안 기초</small>
+                            </td>
+
+                            <td rowspan="3" class="subject-cell subject-pink">
+                                <span class="subject-icon">🛠️</span>
+                                <strong>웹 시스템</strong>
+                                <small>설계 및 분석</small>
+                            </td>
+
+                            <td class="subject-cell subject-yellow">
+                                <span class="subject-icon">💡</span>
+                                <strong>IT 트렌드</strong>
+                                <small>특강</small>
+                            </td>
+
+                            <td rowspan="3" class="subject-cell subject-green">
+                                <span class="subject-icon">🚀</span>
+                                <strong>JavaScript</strong>
+                                <small>심화 실습</small>
+                            </td>
+                        </tr>
+
+                        <!-- 10:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                10:00<br>
+                                <span>~ 11:00</span>
+                            </th>
+
+                            <td rowspan="2" class="subject-cell subject-orange">
+                                <span class="subject-icon">🗄️</span>
+                                <strong>데이터베이스</strong>
+                                <small>SQL 실습</small>
+                            </td>
+                        </tr>
+
+                        <!-- 11:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                11:00<br>
+                                <span>~ 12:00</span>
+                            </th>
+
+                            <td class="subject-cell subject-mint">
+                                <span class="subject-icon">🧩</span>
+                                <strong>알고리즘</strong>
+                                <small>문제 풀이</small>
+                            </td>
+                        </tr>
+
+                        <!-- 점심시간 -->
+                        <tr class="lunch-row">
+                            <th scope="row" class="time-cell">
+                                12:00<br>
+                                <span>~ 13:00</span>
+                            </th>
+
+                            <td colspan="5">
+                                <span class="lunch-icon">🍱</span>
+                                점심시간
+                                <span class="lunch-message">
+                                    맛있게 먹고 잠깐 쉬어가기
+                                </span>
+                            </td>
+                        </tr>
+
+                        <!-- 13:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                13:00<br>
+                                <span>~ 14:00</span>
+                            </th>
+
+                            <td rowspan="4" class="subject-cell subject-pink">
+                                <span class="subject-icon">🎨</span>
+                                <strong>UI/UX</strong>
+                                <small>디자인 표준</small>
+                            </td>
+
+                            <td rowspan="2" class="subject-cell subject-green">
+                                <span class="subject-icon">🐧</span>
+                                <strong>리눅스</strong>
+                                <small>시스템 관리</small>
+                            </td>
+
+                            <td rowspan="2" class="subject-cell subject-blue">
+                                <span class="subject-icon">☁️</span>
+                                <strong>클라우드</strong>
+                                <small>AWS 기초</small>
+                            </td>
+
+                            <td rowspan="3" class="subject-cell subject-purple">
+                                <span class="subject-icon">📚</span>
+                                <strong>자료구조</strong>
+                                <small>핵심 개념 학습</small>
+                            </td>
+
+                            <td class="subject-cell subject-yellow">
+                                <span class="subject-icon">🚀</span>
+                                <strong>개인 프로젝트</strong>
+                                <small>개발 및 기록</small>
+                            </td>
+                        </tr>
+
+                        <!-- 14:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                14:00<br>
+                                <span>~ 15:00</span>
+                            </th>
+
+                            <td rowspan="3" class="subject-cell subject-orange">
+                                <span class="subject-icon">🌐</span>
+                                <strong>오픈소스</strong>
+                                <small>소프트웨어</small>
+                            </td>
+                        </tr>
+
+                        <!-- 15:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                15:00<br>
+                                <span>~ 16:00</span>
+                            </th>
+
+                            <td rowspan="3" class="subject-cell subject-mint">
+                                <span class="subject-icon">🌺</span>
+                                <strong>Git &amp; GitHub</strong>
+                                <small>버전 관리</small>
+                            </td>
+
+                            <td rowspan="3" class="subject-cell subject-purple">
+                                <span class="subject-icon">🤖</span>
+                                <strong>인공지능</strong>
+                                <small>머신러닝 기초</small>
+                            </td>
+                        </tr>
+
+                        <!-- 16:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                16:00<br>
+                                <span>~ 17:00</span>
+                            </th>
+
+                            <td rowspan="2" class="subject-cell subject-blue">
+                                <span class="subject-icon">📈</span>
+                                <strong>빅데이터</strong>
+                                <small>분석 실무</small>
+                            </td>
+                        </tr>
+
+                        <!-- 17:00 -->
+                        <tr>
+                            <th scope="row" class="time-cell">
+                                17:00<br>
+                                <span>~ 18:00</span>
+                            </th>
+
+                            <td class="subject-cell subject-yellow">
+                                <span class="subject-icon">🎤</span>
+                                <strong>취업·창업</strong>
+                                <small>특강</small>
+                            </td>
+
+                            <td class="subject-cell subject-pink">
+                                <span class="subject-icon">📝</span>
+                                <strong>주간 회고</strong>
+                                <small>이번 주 돌아보기</small>
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+            <p class="schedule-note">
+                💜 작은 배움도 기록하면 소중한 경험이 됩니다.
+            </p>
+
+        </section>
+
+    </main>
+
 </body>
 
 </html>
